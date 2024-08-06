@@ -25,6 +25,9 @@ def store(input):
 def retrieve():
     """Retreive what the user wants from memory"""
     try:
+        if not os.path.exists("memory.txt"):
+            with open("memory.txt", "w") as file:
+                pass 
         with open("memory.txt", "r") as file:
             memory = file.read().replace('\n', '')
             return memory
